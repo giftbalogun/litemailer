@@ -9,7 +9,7 @@
         <div class="flex flex-col md:flex-row items-center pt-32 pb-16 md:pb-0">
             <div class="md:w-1/2 lg:w-1/3 mb-4 sm:mb-16 md:mb-0">
                 <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 md:mb-10">
-                    Bulk email software for email marketing
+                    Bulk email software for email general purpose
                 </h1>
                 <p class="text-xl ">
                     You can check how we built it by following this <a class="text-teal-500 text-"

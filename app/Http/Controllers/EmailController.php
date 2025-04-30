@@ -6,20 +6,39 @@ use App\EmailList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
+/*
+|--------------------------------------------------------------------------
+| EmailController
+|--------------------------------------------------------------------------
+*/
 class EmailController extends Controller
 {
+    /*
+    |--------------------------------------------------------------------------
+    | web-view add email
+    |--------------------------------------------------------------------------
+    */
     public function showAddEmailForm()
     {
         return view('add-email');
     }
-
+    
+    /*
+    |--------------------------------------------------------------------------
+    | web-view add email
+    |--------------------------------------------------------------------------
+    */
     public function showEmailList()
     {
         $emails = EmailList::all();
-
         return view('list-email', compact('emails'));
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | web-view save email
+    |--------------------------------------------------------------------------
+    */
     public function saveEmail()
     {
         $data = request()->validate([
@@ -32,11 +51,21 @@ class EmailController extends Controller
         return redirect()->back()->with('message', 'Your email was added successfully');
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | web-view show send mail form
+    |--------------------------------------------------------------------------
+    */
     public function showSendEmailForm()
     {
         return view('send-email');
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | web-view send mail
+    |--------------------------------------------------------------------------
+    */
     public function sendEmail()
     {
         request()->validate([
