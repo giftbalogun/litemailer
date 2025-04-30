@@ -4,7 +4,7 @@ LiteMailer is an email sending application where user can add email address and 
 
 You can check how we built this by following this [blog series](http://stephenjude.me/series/laravel-lessons). 
 
-### Installation
+### Installation with Local Dependacy Installed
 ```
 git clone https://github.com/stephenjude/litemailer.git
 
@@ -15,6 +15,23 @@ composer install
 cp .env.example .env
 
 php artisan key:generate
+```
+
+### Installation with Docker
+```
+git clone https://github.com/stephenjude/litemailer.git
+
+cd litemailer
+
+docker exec -it litemailer_app composer install
+
+docker exec -it litemailer_app cp .env.example .env
+
+docker exec -it litemailer_app php artisan key:generate
+
+docker exec -it litemailer_app php artisan migrate
+
+docker exec -it litemailer_app php artisan serve --port=8081
 ```
 
 Add your your database credentials
